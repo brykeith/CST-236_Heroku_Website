@@ -13,7 +13,7 @@
 
     // Constructor
     public function __construct($name){
-      echo
+      $this->name = $name;
     }
   }
 
