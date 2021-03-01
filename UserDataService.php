@@ -1,12 +1,14 @@
 <?php
 
 /**
- * CST-235
+ * CST-236
  * Author: Brydon Johnson
  * Date: 2/28/21
  * 
  * UserDataService.php: 
- *    description
+ *    Used for searching user records by username, id and email.
+ *    Used to registerNewUser
+ *      cannot be done if username already exists
  *    
  *    
  *    

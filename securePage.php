@@ -1,12 +1,13 @@
 <?php
 
 /**
- * CST-235
+ * CST-236
  * Author: Brydon Johnson
  * Date: 
  * 
  * securePage.php: 
- *    description
+ *    used anytime a page needs to be restricted to a logged in user
+ *    checks that the principal session variable is valid
  *    
  *    
  *    

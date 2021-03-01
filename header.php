@@ -1,14 +1,12 @@
 <?php
 
 /**
- * CST-235
+ * CST-236
  * Author: Brydon Johnson
- * Date: 
+ * Date: 2/28/21
  * 
  * header.php: 
- *    description
- *    
- *    
- *    
+ *    starts session  
  */
 session_start();
+include 'header.html';

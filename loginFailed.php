@@ -1,17 +1,15 @@
 <?php
 
 /**
- * CST-235
+ * CST-236
  * Author: Brydon Johnson
  * Date: 
  * 
  * loginFailed.php: 
- *    description
- *    
- *    
+ *    displays when login event is not successful    
  *    
  */
 
 require_once 'header.php';
 require_once 'autoLoader.php';
-echo "You are NOT logged in";
+echo "<br>You are NOT logged in<br>";

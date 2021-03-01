@@ -1,12 +1,12 @@
 <?php
 
 /**
- * CST-235
+ * CST-236
  * Author: Brydon Johnson
- * Date: 
+ * Date: 2/28/21
  * 
  * loginPassed.php: 
- *    description
+ *    page displayed when loginHandler.php data authentication is successful
  *    
  *    
  *    
@@ -16,4 +16,4 @@ require_once 'autoLoader.php';
 require_once 'securePage.php';
 
 
-echo "You are logged in";
+echo "<br>You are logged in<br>";

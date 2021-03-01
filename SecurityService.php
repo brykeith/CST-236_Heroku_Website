@@ -1,12 +1,12 @@
 <?php
 
 /**
- * CST-235
+ * CST-236
  * Author: Brydon Johnson
  * Date: 2/28/21
  * 
  * SecurityService.php: 
- *    description
+ *    Used to authenticate the user login data
  *    
  *    
  *    
@@ -40,10 +40,8 @@ class SecurityService
     $result = $conn->query($sql_query);
 
     if ($result->num_rows == 0) {
-      echo "<br> num, rows: $result->num_rows";
       return false;
     } else if ($result->num_rows == 1) {
-      echo "<br> num, rows: $result->num_rows";
       return true;
     }
   }

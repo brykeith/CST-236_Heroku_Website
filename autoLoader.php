@@ -1,13 +1,13 @@
 <?php
 
 /**
- * CST-235
+ * CST-236
  * Author: Brydon Johnson
  * Date: 2/28/21
  * 
  * autoLoader.php: 
- *    description
- *    
+ *    used by other php files ot auto load any class files that are called
+ *    avoids the need to retype "require_once 'User.php'" over and over.
  *    
  *    
  */

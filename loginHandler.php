@@ -1,12 +1,13 @@
 <?php
 
 /**
- * CST-235
+ * CST-236
  * Author: Brydon Johnson
  * Date: 2/28/21
  * 
  * loginHandler.php: 
- *    description
+ *    receives POST request from login.html
+ *    authenticats login data. returns either loginPasses.php or loginFailed.php
  *    
  *    
  *    
