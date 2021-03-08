@@ -9,5 +9,4 @@
  *    serves as home page for the application. Links to login and register  
  */
 
-include 'header.html';
-include 'homepage.html';
+header("Location: presentation/views/home/home.php");

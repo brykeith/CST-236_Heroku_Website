@@ -12,8 +12,7 @@
  *    
  *    
  */
-require_once 'header.php';
-require_once 'autoLoader.php';
+require_once '../../views/shared/_header.php';
 
 $_SESSION['principal'] = false;
-include "logoutSuccess.php";
+include "../../views/logout/logoutSuccess.php";

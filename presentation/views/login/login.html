@@ -18,30 +18,10 @@
     <!-- <link rel="stylesheet" href="styles.css"> -->
   </head>
   <body>
-    <header>
-      <div class="header-title-container">
-        <div class="header-title-text">ECommerse</div>
-      </div>
-      <div class="header-navigation-container">
-        <div class="nav-btn-container">
-          <a href="index.php" class="nav-btn">Home</a>
-        </div>
-        <div class="nav-btn-container">
-          <a href="login.html" class="nav-btn">Login</a>
-        </div>
-        <div class="nav-btn-container">
-          <a href="logoutHandler.php" class="nav-btn">Log Out</a>
-        </div>
-        <div class="nav-btn-container">
-          <a href="register.html" class="nav-btn">Sign-Up</a>
-        </div>
-      </div>
-    </header>
-
     <div class="form-wrapper">
       <div class="form-border">
         <div class="form-title">Welcome!</div>
-        <form action="loginHandler.php" method="POST">
+        <form action="../../handlers/login/loginHandler.php" method="POST">
           <label for="Username">Username:</label>
           <input type="text" name="Username" id="Username" /> <br />
           <label for="Password">Password:</label>
@@ -50,9 +30,6 @@
             <input class="submit" type="submit" value="Login!" />
           </div>
         </form>
-        <div class="bottom-sub-text">
-          Dont have an account? <a href="register.html">Sign Up!</a>
-        </div>
       </div>
     </div>
     <br />

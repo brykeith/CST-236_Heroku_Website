@@ -1,0 +1,26 @@
+<!--
+ * CST-236
+ * Author: Brydon Johnson
+ * Date: 2/28/21
+ * 
+ * login.html: 
+ *    login page. sends data to login.php
+ *    
+ *    
+ *    -->
+
+<div class="form-wrapper">
+  <div class="form-border">
+    <div class="form-title">Search By Name or Description</div>
+    <form
+      action="../../handlers/products/productSearchHandler.php"
+      method="GET"
+    >
+      <input type="text" name="searchQueryString" id="searchQueryString" />
+      <br />
+      <div class="submit-container">
+        <input class="submit" type="submit" value="Search!" />
+      </div>
+    </form>
+  </div>
+</div>

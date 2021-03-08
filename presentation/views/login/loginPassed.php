@@ -11,9 +11,5 @@
  *    
  *    
  */
-require_once 'header.php';
-require_once 'autoLoader.php';
-require_once 'securePage.php';
-
 
 echo "<br>You are logged in<br>";

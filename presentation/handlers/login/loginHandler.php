@@ -12,8 +12,7 @@
  *    
  *    
  */
-require_once 'header.php';
-require_once 'autoLoader.php';
+require_once '../../views/shared/_header.php';
 
 $attemptedLoginUsername = $_POST['Username'];
 $attemptedLoginPassword = $_POST['Password'];
@@ -23,8 +22,8 @@ $loggedIn = $service->authenticate();
 
 if ($loggedIn) {
   $_SESSION['principal'] = true;
-  include "loginPassed.php";
+  include "../../views/login/loginPassed.php";
 } else {
   $_SESSION['principal'] = false;
-  include "loginFailed.php";
+  include "../../views/login/loginFailed.php";
 }

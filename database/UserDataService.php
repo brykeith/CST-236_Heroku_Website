@@ -13,13 +13,11 @@
  *    
  *    
  */
-require_once 'header.php';
-require_once 'autoLoader.php';
 
 class UserDataService
 {
 
-  function registerNewUser($username, $password, $email)
+  function registerNewUser($firstName, $lastName, $username, $password, $role)
   {
 
     if (!$this->findUserByUsername($username)) {
@@ -28,14 +26,16 @@ class UserDataService
       // check username not already exists
 
       echo "<br>ADDING USER";
+      echo "<br>FirstName: $firstName";
+      echo "<br>LastName: $lastName";
       echo "<br>USERNAME: $username";
       echo "<br>PASSWORD: $password";
-      echo "<br>EMAIL: $email";
+      echo "<br>Role: $role";
 
 
       echo "<br><a href=\"login.html\">login</a><br>";
 
-      $sql_query = "INSERT INTO mfqgkhncw3r34ada.users(USERNAME, PASSWORD, EMAIL) VALUES ('$username', '$password', '$email')";
+      $sql_query = "INSERT INTO mfqgkhncw3r34ada.users(FIRST_NAME, LAST_NAME, USERNAME, PASSWORD, ROLE) VALUES ('$firstName', '$lastName', '$username', '$password', '$role')";
 
       $conn = $database->getConnection();
       $result = $conn->query($sql_query);

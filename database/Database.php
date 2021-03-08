@@ -13,8 +13,6 @@
  *    
  *    
  */
-require_once 'header.php';
-require_once 'autoLoader.php';
 
 class Database
 {

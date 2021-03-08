@@ -9,4 +9,5 @@
  *    starts session  
  */
 session_start();
-include 'header.html';
+include '../../../autoLoader.php';
+include '../../views/shared/_header.html';
