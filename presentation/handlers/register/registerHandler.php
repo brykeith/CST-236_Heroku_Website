@@ -11,6 +11,10 @@
  *    registers new use
  *
  */
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include '../../views/shared/_header.php';
 
 $attemptedRegisterFirstName = $_POST['FirstName'];

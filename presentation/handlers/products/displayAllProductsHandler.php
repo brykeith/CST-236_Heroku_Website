@@ -13,6 +13,9 @@
  *    
  */
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // create an instance of the business service
 $bs = new ProductBusinessService();
 
