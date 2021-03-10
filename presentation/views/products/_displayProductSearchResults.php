@@ -32,6 +32,10 @@
       padding: 8px;
     }
 
+    #products tr {
+      position: relative;
+    }
+
     #products tr:nth-child(even) {
       background-color: #f2f2f2;
     }
@@ -47,8 +51,31 @@
       background-color: #4CAF50;
       color: white;
     }
+
+    .prod-desc {
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    .product-form-submit {
+      text-decoration: none;
+      padding: 8px 24px;
+      border-radius: 0;
+      background-color: #282e34;
+      color: #fff;
+      border: 0;
+      font-size: 16px;
+      cursor: pointer;
+      margin-left: 24px;
+    }
+
+    .column-price {
+      width: 75px;
+    }
   </style>
 </head>
+
 
 <table id="products" class="display">
   <thead>
@@ -56,24 +83,17 @@
       <th>ID</th>
       <th>Product Name</th>
       <th>Description</th>
-      <th>Price</th>
+      <th class="column-price">Price</th>
     </tr>
   </thead>
   <tbody>
     <?php
 
     for ($i = 0; $i < count($products); $i++) {
-      echo '<tr>';
-      echo '<td>' . $products[$i]['ID'] . '</td>';
-      echo '<td>' . $products[$i]['PRODUCT_NAME'] . '</td>';
-      echo '<td>' . $products[$i]['PRODUCT_DESCRIPTION'] . '</td>';
-      echo '<td>' . $products[$i]['PRICE'] . '</td>';
-      echo '</tr>';
+      include '../../views/products/_productTableItem.php';
     }
 
     ?>
-
-
 
   </tbody>
 </table>

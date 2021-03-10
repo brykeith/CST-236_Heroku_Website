@@ -10,4 +10,4 @@
  *    
  */
 
-include '../shared/_footer.html';
+include '../../views/shared/_footer.html';

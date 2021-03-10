@@ -27,4 +27,10 @@ class ProductBusinessService
     $dataService = new ProductDataService();
     return $dataService->searchByNameOrDescription($searchQueryString);
   }
+
+  function getProductByID($prod_id)
+  {
+    $dataService = new ProductDataService();
+    return $dataService->getProductByID($prod_id);
+  }
 }
