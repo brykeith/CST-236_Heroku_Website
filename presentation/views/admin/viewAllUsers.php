@@ -10,8 +10,10 @@
  *    
  */
 
-$pageTitle = 'Retail Store | Logout';
+$pageTitle = 'Retail Store | View Users';
 
 include '../../views/shared/_header.php';
-include '../../handlers/logout/logoutHandler.php';
+?>
+
+<?
 include '../../views/shared/_footer.php';

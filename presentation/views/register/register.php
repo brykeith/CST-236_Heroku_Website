@@ -10,8 +10,10 @@
  *    
  */
 
+$pageTitle = 'Retail Store | Register';
+
 include '../../views/shared/_header.php';
 
 include 'register.html';
 
-include '../shared/_footer.php';
+include '../../views/shared/_footer.php';

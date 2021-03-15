@@ -10,6 +10,8 @@
  *    
  */
 
+$pageTitle = 'Retail Store | HomePage';
+
 include '../../views/shared/_header.php';
 include 'homepage.html';
-include '../shared/_footer.php';
+include '../../views/shared/_footer.php';

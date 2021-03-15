@@ -8,44 +8,39 @@
  *    
  *    
  *    -->
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Form</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-  </head>
-  <body>
-    <div class="form-wrapper">
-      <div class="form-border">
-        <div class="form-title">Create Account</div>
-        <form
-          action="../../handlers/register/registerHandler.php"
-          method="POST"
-        >
-          <label for="FirstName">First Name:</label>
-          <input type="text" name="FirstName" id="FirstName" /> <br />
-          <label for="LastName">Last Name:</label>
-          <input type="password" name="LastName" id="LastName" /> <br />
-          <label for="Username">Username:</label>
-          <input type="text" name="Username" id="Username" /> <br />
-          <label for="Password">Password:</label>
-          <input type="password" name="Password" id="Password" /> <br />
-          <label for="Role">Select Role:</label>
-          <select name="Role" id="Role">
-            <option value="user">User</option>
-            <option value="premium">Premium User</option>
-            <option value="employee">Employee</option>
-            <option value="admin">Admin</option>
-          </select>
-          <div class="submit-container">
-            <input class="submit" type="submit" value="Sign Up!" />
-          </div>
-        </form>
-      </div>
+<div class="container-fluid pt-4 d-flex justify-content-center">
+  <form
+    style="width: 24rem"
+    class="card px-4 py-3"
+    action="../../handlers/register/registerHandler.php"
+    method="POST"
+  >
+    <div class="mb-3">
+      <label for="FirstName" class="form-label">First Name: </label>
+      <input type="text" class="form-control" id="FirstName" name="FirstName" />
     </div>
-    <br />
-  </body>
-</html>
+    <div class="mb-3">
+      <label for="LastName" class="form-label">Last Name: </label>
+      <input type="text" class="form-control" id="LastName" name="LastName" />
+    </div>
+    <div class="mb-3">
+      <label for="Username" class="form-label">Username: </label>
+      <input type="text" class="form-control" id="Username" name="Username" />
+    </div>
+    <div class="mb-3">
+      <label for="Password" class="form-label">Password: </label>
+      <input type="text" class="form-control" id="Password" name="Password" />
+    </div>
+
+    <div class="mb-3">
+      <label for="Role" class="form-label">Role: </label>
+      <select class="form-select form-select-sm mb-3" id="Role" name="Role">
+        <option selected>Open this select menu</option>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

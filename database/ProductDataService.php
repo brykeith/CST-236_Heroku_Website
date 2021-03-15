@@ -114,13 +114,48 @@ class ProductDataService
     } else {
 
       return $result->fetch_assoc();
-
-      // $products_array = array();
-
-      // while ($product = $result->fetch_assoc()) {
-      //   array_push($products_array, $product);
-      // }
-      // return $products_array;
     }
+  }
+
+  // edits the product with the parameter ID
+  function editProduct($id, $name, $desc, $price)
+  {
+    $database = new Database();
+
+    $conn = $database->getConnection();
+
+    $stmt = $conn->prepare("UPDATE mfqgkhncw3r34ada.products
+    SET PRODUCT_NAME = '$name', PRODUCT_DESCRIPTION = '$desc', PRICE = $price
+    WHERE ID = $id;");
+
+    return $stmt->execute();
+  }
+
+  function deleteProductWithId($id)
+  {
+    $database = new Database();
+
+    $conn = $database->getConnection();
+
+    $stmt = $conn->prepare("DELETE FROM mfqgkhncw3r34ada.products
+    WHERE ID = $id;");
+
+    return $stmt->execute();
+  }
+
+  function addProduct($name, $desc, $price)
+  {
+
+    $database = new Database();
+
+    $conn = $database->getConnection();
+
+    $stmt = $conn->prepare(
+      "INSERT INTO mfqgkhncw3r34ada.products
+      (PRODUCT_NAME, PRODUCT_DESCRIPTION, PRICE) 
+      VALUES ('$name', '$desc', '$price')"
+    );
+
+    return $stmt->execute();
   }
 }

@@ -21,20 +21,21 @@
 </head>
 
 <div class="container">
-  <table id="products" class="table table-light table-hover">
+  <table id="users" class="table table-light table-hover">
     <thead>
       <tr>
         <th>ID</th>
-        <th>Product Name</th>
-        <th>Description</th>
-        <th class="column-price">Price</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+        <th>Role</th>
       </tr>
     </thead>
     <tbody>
       <?php
 
-      for ($i = 0; $i < count($products); $i++) {
-        include '../../views/products/_productTableItem.php';
+      for ($i = 0; $i < count($users); $i++) {
+        include '../../views/admin/_userTableItem.php';
       }
 
       ?>
@@ -45,6 +46,6 @@
 
 <script>
   $(document).ready(function() {
-    $('#products').DataTable();
+    $('#users').DataTable();
   });
 </script>

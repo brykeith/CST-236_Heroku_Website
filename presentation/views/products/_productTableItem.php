@@ -7,16 +7,13 @@
   // filename.php: 
   //    description 
 
-
-  echo '<a href="../../handlers/products/viewProductHandler.php?id=4">';
-  echo '<tr>';
-  echo '<td class="prod-id">' . $products[$i]['ID'] . '</td>';
-  echo '<td class="prod-name">' . $products[$i]['PRODUCT_NAME'] . '</td>';
-  echo '<td class="prod-desc">' . $products[$i]['PRODUCT_DESCRIPTION'];
-  echo '<a href="../../handlers/products/viewProductHandler.php?id=' . $products[$i]['ID'] . '" class="product-form-submit">View</a>';
-  echo '</td>';
-  echo '<td class="prod-price"> $' . $products[$i]['PRICE'] . ' </td>';
-  echo '</tr>';
-  echo '</a>';
-
   ?>
+
+  <tr>
+    <td class="prod-id"><?php echo $products[$i]['ID']; ?></td>
+    <td class="prod-name"> <?php echo $products[$i]['PRODUCT_NAME']; ?></td>
+    <td class="prod-desc"> <?php echo $products[$i]['PRODUCT_DESCRIPTION']; ?>
+      <? include '../../views/products/_productTableItem__buttons.php'; ?>
+    </td>
+    <td class="prod-price">$<?php echo $products[$i]['PRICE']; ?></td>
+  </tr>

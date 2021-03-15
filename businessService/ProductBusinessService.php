@@ -33,4 +33,22 @@ class ProductBusinessService
     $dataService = new ProductDataService();
     return $dataService->getProductByID($prod_id);
   }
+
+  function editProduct($id, $name, $desc, $price)
+  {
+    $dataService = new ProductDataService();
+    return $dataService->editProduct($id, $name, $desc, $price);
+  }
+
+  function deleteProductWithId($id)
+  {
+    $dataService = new ProductDataService();
+    return $dataService->deleteProductWithId($id);
+  }
+
+  function addProduct($name, $desc, $price)
+  {
+    $dataService = new ProductDataService();
+    return $dataService->addProduct($name, $desc, $price);
+  }
 }

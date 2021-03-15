@@ -12,9 +12,8 @@
  *    
  *    
  */
-require_once 'header.php';
-require_once 'autoLoader.php';
 
-if (isset($_SESSION['principal']) == false || $_SESSION['principal'] == null || $_SESSION['principal'] == false) {
-  header("Location: login.html");
+if (isset($_SESSION['role']) == true && $_SESSION['role'] == 2) {
+} else {
+  header("Location: ../../views/errors/notAdmin.php");
 }

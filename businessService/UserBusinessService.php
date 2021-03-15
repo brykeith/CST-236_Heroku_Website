@@ -15,9 +15,42 @@
 class UserBusinessService
 {
 
+  function getAllUsers()
+  {
+    $dataService = new UserDataService();
+    return $dataService->getAllUsers();
+  }
+
   function registerNewUser($firstName, $lastName, $username, $password, $role)
   {
     $service = new UserDataService();
-    $service->registerNewUser($firstName, $lastName, $username, $password, $role);
+
+    return $service->registerNewUser($firstName, $lastName, $username, $password, $role);
+  }
+
+  function findUserByID($id)
+  {
+    $service = new UserDataService();
+
+    return $service->findUserByID($id);
+  }
+
+  function findUserByUsername($username)
+  {
+    $service = new UserDataService();
+
+    return $service->findUserByUsername($username);
+  }
+
+  function deleteUserWithId($id)
+  {
+    $dataService = new UserDataService();
+    return $dataService->deleteUserWithId($id);
+  }
+
+  function editUser($id,  $firstName, $lastName, $username, $role)
+  {
+    $dataService = new UserDataService();
+    return $dataService->editUser($id, $firstName, $lastName, $username, $role);
   }
 }

@@ -10,7 +10,9 @@
  *    
  */
 
+$pageTitle = 'Retail Store | Products';
+
 include '../../views/shared/_header.php';
-include '_productSearchForm.html';
+require_once '../../../utility/userRestricted.php';
 include '../../handlers/products/displayAllProductsHandler.php';
-include '../shared/_footer.php';
+include '../../views/shared/_footer.php';
