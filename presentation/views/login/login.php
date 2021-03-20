@@ -23,7 +23,7 @@ include '../../views/shared/_header.php';
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="../../../resources/images/user.png" id="icon" alt="User Icon" />
+      <img src="../../../resources/images/user.png" id="icon" alt="User Icon" class="my-3 w-25" />
     </div>
 
     <!-- Login Form -->
