@@ -20,7 +20,7 @@
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
 </head>
 
-<div class="container">
+<div class="container my-5">
   <table id="products" class="table table-light table-hover">
     <thead>
       <tr>

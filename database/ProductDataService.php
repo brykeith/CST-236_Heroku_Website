@@ -45,14 +45,6 @@ class ProductDataService
     }
   }
 
-  // function findProductsByName($searchName){
-  //   $database = new Database();
-
-  //   $conn = $database->getConnection();
-
-  //   $stmt = $conn->prepare("SELECT * FROM mfqgkhncw3r34ada.products WHERE PRODUCT_NAME LIKE")
-  // }
-
 
   // returns an array of products that match the search
   function searchByNameOrDescription($searchQueryString)
@@ -113,7 +105,16 @@ class ProductDataService
       return null;
     } else {
 
-      return $result->fetch_assoc();
+      $prodArray = $result->fetch_assoc();
+
+      // create product object
+      $prod_id = $prodArray['ID'];
+      $prod_name = $prodArray['PRODUCT_NAME'];
+      $prod_desc = $prodArray['PRODUCT_DESCRIPTION'];
+      $prod_price = $prodArray['PRICE'];
+      $prod = new Product($prod_id, $prod_name, $prod_desc, $prod_price);
+
+      return $prod;
     }
   }
 

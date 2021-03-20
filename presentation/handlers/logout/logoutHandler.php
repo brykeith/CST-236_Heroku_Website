@@ -17,6 +17,8 @@ require_once '../../views/shared/_header.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$_SESSION['principal'] = false;
-$_SESSION['role'] = false;
+unset($_SESSION['principal']);
+unset($_SESSION['userid']);
+unset($_SESSION['role']);
+unset($_SESSION['cart']);
 include "../../views/logout/logoutSuccess.php";

@@ -97,7 +97,7 @@ class UserDataService
     $database = new Database();
 
     // testing
-    $sql_query = "SELECT USERNAME, FIRST_NAME, LAST_NAME, ROLE FROM mfqgkhncw3r34ada.users WHERE USERNAME = '$username'";
+    $sql_query = "SELECT ID, USERNAME, FIRST_NAME, LAST_NAME, ROLE FROM mfqgkhncw3r34ada.users WHERE USERNAME = '$username'";
 
     $conn = $database->getConnection();
     $result = $conn->query($sql_query);

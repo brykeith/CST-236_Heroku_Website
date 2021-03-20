@@ -28,25 +28,31 @@ $loggedIn = $securityService->authenticate();
 
 if ($loggedIn) {
 
-  echo '<script> console.log("loginHandler check 1");</script>';
-
-
-  $_SESSION['principal'] = true;
+  // echo '<script> console.log("loginHandler check 1");</script>';
 
   $userBusinessService = new UserBusinessService();
   $user = $userBusinessService->findUserByUsername($attemptedLoginUsername);
 
+  $_SESSION['principal'] = true;
+  $_SESSION['userid'] = $user['ID'];
   $_SESSION['role'] = $user['ROLE'];
 
-  echo '<script> console.log("loginHandler session principal: ' . $_SESSION['principal'] . ' role: ' . $_SESSION['role'] . '");</script>';
+
+
+  // echo '<script> console.log("loginHandler session principal: ' . $_SESSION['principal'] . ' role: ' . $_SESSION['role'] . '");</script>';
 
 
   include "../../views/login/loginPassed.php";
 } else {
-  $_SESSION['principal'] = false;
-  $_SESSION['role'] = false;
+  unset($_SESSION['principal']);
+  unset($_SESSION['userid']);
+  unset($_SESSION['role']);
 
-  echo '<script> console.log("loginHandler session principal: ' . $_SESSION['principal'] . ' role: ' . $_SESSION['role'] . '");</script>';
+  // $_SESSION['principal'] = null;
+  // $_SESSION['userid'] = null;
+  // $_SESSION['role'] = null;
+
+  // echo '<script> console.log("loginHandler session principal: ' . $_SESSION['principal'] . ' role: ' . $_SESSION['role'] . '");</script>';
 
 
   include "../../views/login/loginFailed.php";

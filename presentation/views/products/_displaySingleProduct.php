@@ -100,6 +100,10 @@
       </tr>
 
 
+
+
     </table>
+    <a class="btn btn-outline-primary btn-sm" href="../../handlers/cart/addToCartHandler.php?id=<?php echo $prod_id; ?>" class="product-form-submit">ADD TO CART</a>
+
   </div>
 </div>

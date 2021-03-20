@@ -19,10 +19,10 @@ $prod_id = $_GET['id'];
 $service = new ProductBusinessService();
 $product = $service->getProductByID($prod_id);
 
-$prod_id = $product['ID'];
-$prod_name = $product['PRODUCT_NAME'];
-$prod_desc = $product['PRODUCT_DESCRIPTION'];
-$prod_price = $product['PRICE'];
+$prod_id = $product->getId();
+$prod_name = $product->getName();
+$prod_desc = $product->getDesc();
+$prod_price = $product->getPrice();
 
 ?>
 <div class="container-fluid pt-4 d-flex justify-content-center">
