@@ -1,4 +1,41 @@
 /*===================================
+    GLOBAL
+====================================*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  position: relative;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+  overflow-y: scroll;
+  /*    hide scroll bar    */
+  /*    hide scroll bar    */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  min-height: 80vh;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+/*===================================
     CART ICON
 ====================================*/
 .cart-button {
@@ -27,24 +64,17 @@
   font-weight: 700;
 }
 
+/*===================================
+    COMMON FOOTER
+====================================*/
 /* BASIC */
 .loginForm-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  min-height: 100%;
-  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  min-width: 300px;
   /* STRUCTURE */
   /* TABS */
   /* FORM TYPOGRAPHY*/
@@ -76,7 +106,7 @@
   border-radius: 10px 10px 10px 10px;
   background: #fff;
   padding: 30px;
-  width: 90%;
+  width: 100%;
   max-width: 450px;
   position: relative;
   padding: 0px;
@@ -272,13 +302,7 @@
   width: 60%;
 }
 
-html {
-  overflow-y: scroll;
-}
-
-body {
-  height: 100vh;
-  position: relative;
-  overflow-y: scroll;
-}
+/*===================================
+    CART ICON
+====================================*/
 /*# sourceMappingURL=global.css.map */

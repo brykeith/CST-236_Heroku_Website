@@ -1,12 +1,40 @@
-@import "_header";
-@import "_loginForm";
+/*===================================
+    GLOBAL
+====================================*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
-  overflow-y: scroll;
+  height: 100%;
+  position: relative;
 }
 
 body {
-  height: 100vh;
+  min-height: 100%;
   position: relative;
   overflow-y: scroll;
+
+  /*    hide scroll bar    */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /*    hide scroll bar    */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
+
+main {
+  min-height: 80vh;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+@import "_header";
+@import "_footer";
+@import "_loginForm";
+@import "_viewProduct";

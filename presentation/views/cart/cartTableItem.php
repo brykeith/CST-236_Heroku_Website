@@ -12,21 +12,20 @@
  *    
  */
 ?>
-<!-- <tr>
-  <th scope="col">#</th>
-  <th scope="col">Product</th>
-  <th scope="col">Description</th>
-  <th scope="col">Price</th>
-  <th scope="col">Quantity</th>
-  <th scope="col">Subtotal</th>
-  <th scope="col"></th>
-</tr> -->
 
 <tr>
   <th scope="col"><?= $index ?></th>
   <td><?= $product->getName() ?></td>
   <td><?= $product->getDesc() ?></td>
   <td><?= $product->getPrice() ?></td>
-  <td><?= $qty ?></td>
+  <td width="200">
+    <form action="../../handlers/cart/updateQtyHandler.php?id=<?= $product_id ?>" method="POST">
+      <div class="d-flex">
+        <p class=" fw-bold me-2"><?= $qty ?></p>
+        <input class="form-control me-2" type="number" min="0" max="1000" name="new-qty" id="new-qty" value="<?= $qty ?>">
+        <input class=" btn btn-sm btn-warning me-2" type="submit" value="update">
+      </div>
+    </form>
+  </td>
   <td><?= $c->getSubtotals()[$product->getId()] ?></td>
 </tr>

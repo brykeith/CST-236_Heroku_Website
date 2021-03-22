@@ -42,6 +42,7 @@ if ($loggedIn) {
   // echo '<script> console.log("loginHandler session principal: ' . $_SESSION['principal'] . ' role: ' . $_SESSION['role'] . '");</script>';
 
 
+  header("Location: ../../views/home/home.php");
   include "../../views/login/loginPassed.php";
 } else {
   unset($_SESSION['principal']);

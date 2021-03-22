@@ -31,8 +31,10 @@ include '../../views/shared/_header.php';
     <p>Take a look at out awesome products</p>
     <a href="../../views/products/products.php" class="btn btn-lg btn-primary">Products</a>
   </div>
-</div>
 
 
-<?php
-include '../../views/shared/_footer.php';
+
+
+
+  <?php
+  include '../../views/shared/_footer.php';

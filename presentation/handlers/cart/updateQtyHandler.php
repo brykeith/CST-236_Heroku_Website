@@ -18,6 +18,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $prod_id = $_GET['id'];
+$new_qty = $_POST['new-qty'];
 
 if (isset($_SESSION['cart'])) {
   $c = $_SESSION['cart'];
@@ -30,7 +31,8 @@ if (isset($_SESSION['cart'])) {
   }
 }
 
-$c->addItem($prod_id);
+$c->setQty($prod_id, $new_qty);
 $_SESSION['cart'] = $c;
 
-header("Location: ../../handlers/products/viewProductHandler.php?id=$prod_id");
+print_r($_SESSION['cart']);
+header("Location: ../../views/cart/showcart.php");

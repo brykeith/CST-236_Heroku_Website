@@ -21,4 +21,5 @@ unset($_SESSION['principal']);
 unset($_SESSION['userid']);
 unset($_SESSION['role']);
 unset($_SESSION['cart']);
+header("Location: ../../views/home/home.php");
 include "../../views/logout/logoutSuccess.php";

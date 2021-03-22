@@ -25,7 +25,7 @@
 
 
 
-
+</main>
 <footer class="position-fixed bottom-0 start-50 translate-middle-x w-100">
   <div class="container bg-primary rounded h-100">
     <div class="p-2 mb-0 text-white text-center rounded ">
