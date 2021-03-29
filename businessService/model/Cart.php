@@ -56,6 +56,7 @@ class Cart
     if ($this->items[$prod_id] <= 0) {
       unset($this->items[$prod_id]);
     }
+    $this->calcTotal();
   }
 
   // * Calculate the total of all the items in the cart

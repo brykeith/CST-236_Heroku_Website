@@ -89,6 +89,9 @@ if ($c->getUserid() != $userid) {
 
     </tbody>
   </table>
+
+  <a href="../../views/cart/checkout.php" class="btn btn-warning me-2">Checkout</a>
+  <a href="../../views/products/products.php" class="btn btn-outline-primary me-2">Continue Shopping</a>
 </div>
 
 

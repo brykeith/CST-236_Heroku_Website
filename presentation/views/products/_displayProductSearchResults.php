@@ -27,6 +27,7 @@
         <th>ID</th>
         <th>Product Name</th>
         <th>Description</th>
+        <th></th>
         <th class="column-price">Price</th>
       </tr>
     </thead>
