@@ -13,6 +13,8 @@
  */
 
 require_once '../../views/shared/_header.php';
+require_once '../../../utility/adminRestricted.php';
+
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);

@@ -19,5 +19,6 @@
     <li><a class="dropdown-item" href="../../views/admin/users.php">View Users</a></li>
     <li><a class="dropdown-item" href="#">Add User</a></li>
     <li><a class="dropdown-item" href="../../views/admin/addProduct.php">Add Product</a></li>
+    <li><a class="dropdown-item" href="../../views/admin/ordersReport.php">Orders Report</a></li>
   </ul>
 </li>

@@ -110,6 +110,66 @@ class UserDataService
     }
   }
 
+  function findUserByFirstname($firstname)
+  {
+    $database = new Database();
+
+    $conn = $database->getConnection();
+
+    $stmt = $conn->prepare("SELECT ID, USERNAME, FIRST_NAME, LAST_NAME, ROLE FROM mfqgkhncw3r34ada.users WHERE FIRST_NAME LIKE '%$firstname%'");
+
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    if (!$result) {
+      echo "assume there is an error in SQL statement";
+      exit;
+    }
+
+    if ($result->num_rows == 0) {
+      return null;
+    } else {
+
+      $user_array = array();
+
+      while ($user = $result->fetch_assoc()) {
+        array_push($user_array, $user);
+      }
+      return $user_array;
+    }
+  }
+
+  function findUserByLastname($lastname)
+  {
+    $database = new Database();
+
+    $conn = $database->getConnection();
+
+    $stmt = $conn->prepare("SELECT ID, USERNAME, FIRST_NAME, LAST_NAME, ROLE FROM mfqgkhncw3r34ada.users WHERE LAST_NAME LIKE '%$lastname%'");
+
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    if (!$result) {
+      echo "assume there is an error in SQL statement";
+      exit;
+    }
+
+    if ($result->num_rows == 0) {
+      return null;
+    } else {
+
+      $user_array = array();
+
+      while ($user = $result->fetch_assoc()) {
+        array_push($user_array, $user);
+      }
+      return $user_array;
+    }
+  }
+
   function deleteUserWithId($id)
   {
     $database = new Database();

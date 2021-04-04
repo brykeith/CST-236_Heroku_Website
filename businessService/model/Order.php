@@ -9,10 +9,13 @@ class Order
   private $address_id;
   private $total;
 
+
   function __construct($user_id, $address_id, $total)
   {
+    date_default_timezone_set('MST');
+
     $this->id = 0;
-    $this->date = date("Y/m/d");
+    $this->date = date("Y-m-d H:i:s");
     $this->user_id = $user_id;
     $this->address_id = $address_id;
     $this->total = $total;

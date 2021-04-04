@@ -26,6 +26,8 @@ class OrdersBusinessService
     $db = new Database();
     $conn = $db->getConnection();
 
+    $success = false;
+
     $conn->autocommit(FALSE);
     $conn->begin_transaction();
 
@@ -44,11 +46,14 @@ class OrdersBusinessService
 
     if ($orderID && $okdetails) {
       $conn->commit();
+      $success = true;
     } else {
       $conn->rollback();
     }
 
     $conn->close();
+
+    return $success;
   }
 
   function addOrdersLine($order, $conn)
@@ -103,5 +108,13 @@ class OrdersBusinessService
     $dataService = new OrderDataService();
 
     return $dataService->getOrderDetails($id);
+  }
+
+  // gets the orders between date1 and date2 
+  function getOrderBetweenDates($date1, $date2)
+  {
+    $dataService = new OrderDataService();
+
+    return $dataService->getOrderBetweenDates($date1, $date2);
   }
 }

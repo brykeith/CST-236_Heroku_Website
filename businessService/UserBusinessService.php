@@ -42,6 +42,22 @@ class UserBusinessService
     return $service->findUserByUsername($username);
   }
 
+  function findUserByFirstname($firstname)
+  {
+    $service = new UserDataService();
+    echo 'here2';
+
+
+    return $service->findUserByFirstname($firstname);
+  }
+
+  function findUserByLastname($lastname)
+  {
+    $service = new UserDataService();
+
+    return $service->findUserByLastname($lastname);
+  }
+
   function deleteUserWithId($id)
   {
     $dataService = new UserDataService();

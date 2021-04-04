@@ -27,5 +27,8 @@ if (isset($_SESSION['userid']) && isset($_SESSION['cart'])) {
 
   $ordersBusinessService = new OrdersBusinessService();
   $order = new Order($userid, 9, $cart->getTotal_price());
-  $ordersBusinessService->checkOut($order, $cart);
+  if ($ordersBusinessService->checkOut($order, $cart)) {
+    $_SESSION['cart'] = new Cart($_SESSION['userid']);
+    header("Location: ../../views/cart/successfulOrder.php");
+  };
 }

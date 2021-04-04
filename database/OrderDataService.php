@@ -41,22 +41,13 @@ class OrderDataService
       exit;
     endif;
 
-    echo '</br> </br>';
-    echo 'order date: ' . $order_date . ' userid: ' . $user_id . ' user address id: ' .  $user_address_id . ' order_total: ' .  $order_total;
-
-    echo '</br> </br>';
-    print_r($stmt);
-
     // execute query
-    echo '</br> </br>';
     $stmt->execute();
 
     // get results
     if ($stmt->affected_rows > 0) {
-      echo 'something inserted for new order';
       return $conn->insert_id;
     } else {
-      echo 'nothing inserted into the database during createNew in OrderDataService';
       return false;
     }
   }
@@ -73,7 +64,6 @@ class OrderDataService
     $stmt = $conn->prepare("INSERT INTO mfqgkhncw3r34ada.order_details (orders_id, products_id, QUANTITY, CURRENT_PRICE, CURRENT_DESCRIPTION) VALUES (?,?,?,?,?)");
 
     if (!$stmt) {
-      echo "something wrong in the binding process. SQL statement error?";
       return -1;
     } else {
       $product_id = $orderDetails->getProduct_id();
@@ -98,6 +88,32 @@ class OrderDataService
   // return all orders in the database
   function getAllOrders()
   {
+    $database = new Database();
+
+    $conn = $database->getConnection();
+
+    $stmt = $conn->prepare("SELECT * FROM mfqgkhncw3r34ada.orders INNER JOIN mfqgkhncw3r34ada.order_details ON mfqgkhncw3r34ada.orders.ID=mfqgkhncw3r34ada.order_details.orders_ID ORDER BY mfqgkhncw3r34ada.orders.TOTAL_PRICE DESC");
+
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    if (!$result) {
+      echo "assume there is an error in SQL statement";
+      exit;
+    }
+
+    if ($result->num_rows == 0) {
+      return null;
+    } else {
+
+      $order_array = array();
+
+      while ($user = $result->fetch_assoc()) {
+        array_push($order_array, $user);
+      }
+      return $order_array;
+    }
   }
 
   // deletes an order item from the database
@@ -118,5 +134,36 @@ class OrderDataService
   // gets the order details with id of $id 
   function getOrderDetails($id)
   {
+  }
+
+  // gets the orders between date1 and date2 
+  function getOrderBetweenDates($date1, $date2)
+  {
+    $database = new Database();
+
+    $conn = $database->getConnection();
+
+    $stmt = $conn->prepare("SELECT * FROM mfqgkhncw3r34ada.orders INNER JOIN mfqgkhncw3r34ada.order_details ON mfqgkhncw3r34ada.orders.ID=mfqgkhncw3r34ada.order_details.orders_ID WHERE DATE BETWEEN '$date1' AND '$date2' ORDER BY mfqgkhncw3r34ada.orders.TOTAL_PRICE DESC");
+
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    if (!$result) {
+      echo "assume there is an error in SQL statement";
+      exit;
+    }
+
+    if ($result->num_rows == 0) {
+      return null;
+    } else {
+
+      $order_array = array();
+
+      while ($user = $result->fetch_assoc()) {
+        array_push($order_array, $user);
+      }
+      return $order_array;
+    }
   }
 }
