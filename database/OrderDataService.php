@@ -166,4 +166,47 @@ class OrderDataService
       return $order_array;
     }
   }
+
+  // tries to apply entered promo code 
+  function applyPromoCode($code)
+  {
+    $database = new Database();
+
+    $conn = $database->getConnection();
+
+    $stmt_getCode = $conn->prepare("SELECT * FROM mfqgkhncw3r34ada.promo_codes WHERE CODE = '$code'");
+
+    $stmt_getCode->execute();
+
+    $getCodeResult = $stmt_getCode->get_result();
+
+    if (!$getCodeResult) {
+      echo "assume there is an error in SQL statement";
+      exit;
+    }
+
+    if ($getCodeResult->num_rows == 0) {
+      return null;
+    } else {
+      $promo_code = $getCodeResult->fetch_assoc();
+      $promo_id = $promo_code['ID'];
+      $user_id = $_SESSION['userid'];
+      $discount = $promo_code['DISCOUNT'];
+
+      $stmt_checkUnused = $conn->prepare("SELECT * FROM mfqgkhncw3r34ada.used_promo_codes WHERE promo_codes_ID = '$promo_id' AND users_ID = '$user_id' ");
+      $stmt_checkUnused->execute();
+
+      $checkUnusedResult = $stmt_checkUnused->get_result();
+
+      if ($checkUnusedResult->num_rows < 1) {
+
+        $stmt_markCodeUsed = $conn->prepare("INSERT INTO mfqgkhncw3r34ada.used_promo_codes (promo_codes_ID, users_ID) VALUES ('$promo_id', '$user_id') ");
+        $stmt_markCodeUsed->execute();
+
+
+        $_SESSION['promo'] = $promo_code;
+        // return $promo_code;
+      }
+    }
+  }
 }
